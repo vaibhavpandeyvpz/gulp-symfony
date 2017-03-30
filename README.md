@@ -16,7 +16,7 @@ symfony(gulp);
 // or pass custom options
 symfony(gulp, {
     bundles: 'src/*',
-    filename: 'gulptasks.js',
+    filepath: 'Resources/public/gulptasks.js',
     namespace: (bundle, task) => {
         // return task
     }
