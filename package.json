@@ -1,0 +1,29 @@
+{
+  "author": "Vaibhav Pandey <contact@vaibhavpandey.com>",
+  "dependencies": {
+    "extend": "^3.0",
+    "glob": "^7.0",
+    "lodash": "^4.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9"
+  },
+  "description": "Split Gulp tasks into multiple *.js files (among bundles).",
+  "keywords": [
+    "gulp",
+    "loader",
+    "symfony",
+    "tasks"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "gulp-symfony",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:vaibhavpandeyvpz/gulp-symfony.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
