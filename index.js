@@ -11,7 +11,7 @@ module.exports = function (gulp, options) {
     }
     options = extend({
         bundles: 'src/*',
-        filename: 'gulptasks.js',
+        filepath: 'Resources/public/gulptasks.js',
         namespace: function (bundle, task) {
             bundle = _.replace(bundle, /Bundle$/, '');
             return _.kebabCase(bundle) + ':' + task;
@@ -24,15 +24,15 @@ module.exports = function (gulp, options) {
         bundles = glob.sync(options.bundles);
     }
     bundles.forEach(function (bundle) {
-        var file = path.join(bundle, options.filename);
-        if (fs.existsSync(file)) {
+        var filepath = path.join(bundle, options.filepath);
+        if (fs.existsSync(filepath)) {
             if (_.isFunction(options.namespace)) {
                 gulp.task = function (name, dependencies, creator) {
                     name = options.namespace.call(options, path.basename(bundle), name);
                     return task.call(this, name, dependencies, creator);
                 };
             }
-            require('./' + file)(gulp);
+            require('./' + path.relative(__dirname, filepath))(gulp);
         }
     });
     gulp.task = task;
