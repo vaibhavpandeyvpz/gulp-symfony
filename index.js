@@ -32,7 +32,7 @@ module.exports = function (gulp, options) {
                     return task.call(this, name, dependencies, creator);
                 };
             }
-            require('./' + path.relative(__dirname, filepath))(gulp);
+            require(path.relative(__dirname, filepath))(gulp);
         }
     });
     gulp.task = task;
